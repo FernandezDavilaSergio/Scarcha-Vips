@@ -1,0 +1,312 @@
+/* VARIABLES DE COLOR */
+:root {
+    --color-primary: #004080;       /* Azul oscuro */
+    --color-secondary: #0073e6;     /* Azul medio */
+    --color-accent: #00a3cc;        /* Azul turquesa */
+    --color-light: #e0f7ff;         /* Azul claro */
+    --color-text-dark: #333333;     /* Texto oscuro */
+    --color-text-light: #ffffff;    /* Texto claro */
+}
+
+/* RESET Y ESTRUCTURA BASE */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: #f0f4f8;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* HEADER */
+header {
+    background-color: var(--color-primary);
+    padding: 20px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: var(--color-text-light);
+    font-size: 1.5rem;
+}
+
+header nav a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+header nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--color-accent);
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+header nav a:hover {
+    color: var(--color-light);
+}
+
+/* BOTONES CON ANIMACIÓN */
+button {
+    padding: 10px 15px;
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color-secondary);
+    transform: scale(1.05);
+}
+
+/* ANIMACIÓN PARA TARJETAS */
+.card {
+    padding: 20px;
+    background-color: var(--color-light);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive menu */
+.nav-links.active {
+    display: block;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+/* For mobile view */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+    color: var(--color-text-light);
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero .btn {
+    background-color: var(--color-accent);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Productos Section */
+.productos {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f8fbff;
+}
+
+.productos-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.producto-item {
+    max-width: 280px;
+    text-align: center;
+}
+
+/* Servicios Section */
+.servicios {
+    padding: 40px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.servicios-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    color: var(--color-text-dark);
+    font-size: 1.1rem;
+}
+
+.servicios-list li {
+    margin: 10px 0;
+}
+
+/* Contacto Section */
+.contacto {
+    padding: 40px 20px;
+    background-color: var(--color-light);
+    text-align: center;
+}
+
+.contacto form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contacto label {
+    display: block;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.contacto input[type="text"],
+.contacto input[type="email"],
+.contacto textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+/* Botón de Enviar en Contacto */
+.contacto button {
+    padding: 10px 20px;
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .productos-container {
+        flex-direction: column;
+    }
+}
+/* Catálogo Section */
+.catalogo {
+    padding: 40px 20px;
+    background-color: #f8fbff;
+    text-align: center;
+}
+
+.catalogo h2 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.catalogo-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.catalogo-item {
+    background-color: var(--color-light);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.catalogo-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.catalogo-img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.catalogo-item h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.catalogo-item p {
+    font-size: 0.9rem;
+    color: var(--color-text-dark);
+    margin-bottom: 15px;
+}
+
+.catalogo-item .btn {
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.catalogo-item .btn:hover {
+    background-color: var(--color-secondary);
+}
+
+/* Responsive adjustments for larger screens */
+@media (min-width: 768px) {
+    .catalogo-item {
+        max-width: 300px;
+    }
+}
