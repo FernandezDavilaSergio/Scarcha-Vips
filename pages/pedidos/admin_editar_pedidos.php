@@ -16,7 +16,7 @@ if (!isset($_GET['id'])) {
 }
 
 $order_id = intval($_GET['id']); // Obtener el ID del pedido
-$order = get_order_by_id($order_id); // Función para obtener los detalles del pedido
+//$order = get_order_by_id($order_id); // Función para obtener los detalles del pedido
 
 // Verificar si el pedido existe
 if (!$order) {
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $status = $_POST['status'];
 
     // Función para actualizar el pedido
-    update_order($order_id, $quantity, $status);
+    //update_order($order_id, $quantity, $status);
     header('Location: admin_ver_pedidos.php'); // Redirigir después de actualizar
     exit();
 }

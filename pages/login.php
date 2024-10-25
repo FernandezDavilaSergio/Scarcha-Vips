@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
 
 
-    $user = authenticate_user($email, $password);
+    //$user = authenticate_user($email, $password);
 
     if ($user) {
 

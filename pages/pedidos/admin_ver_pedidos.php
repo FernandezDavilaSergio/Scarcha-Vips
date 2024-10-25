@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
 }
 
 // Obtener todos los pedidos desde la base de datos
-$orders = get_all_orders(); // Función para obtener todos los pedidos
+//$orders = get_all_orders(); // Función para obtener todos los pedidos
 ?>
 
 <!DOCTYPE html>

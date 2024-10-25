@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id'])) {
 
 
 $user_id = $_SESSION['user_id'];
-$orders = get_user_orders($user_id); 
+//$orders = get_user_orders($user_id); 
 ?>
 
 <!DOCTYPE html>

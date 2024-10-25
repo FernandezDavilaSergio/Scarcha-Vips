@@ -15,7 +15,7 @@ if (!isset($_GET['id'])) {
 
 $order_id = $_GET['id'];
 
-$order = get_order_by_id($order_id);
+//$order = get_order_by_id($order_id);
 
 if (!$order) {
     header('Location: ver_pedidos.php');
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $new_status = $_POST['status'];
 
     
-    update_order($order_id, $new_quantity, $new_status); 
+    //update_order($order_id, $new_quantity, $new_status); 
     header('Location: ver_pedidos.php');
     exit();
 }

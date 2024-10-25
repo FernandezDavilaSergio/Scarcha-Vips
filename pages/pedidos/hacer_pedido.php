@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user_id = $_SESSION['user_id'];
 
     // Llamar a la función para crear un nuevo pedido
-    $order_successful = create_order($user_id, $product_id, $quantity);
+    //$order_successful = create_order($user_id, $product_id, $quantity);
 
     if ($order_successful) {
         $message = "Pedido realizado con éxito.";
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 // Obtener la lista de productos
-$products = get_products(); // Función para obtener los productos desde la base de datos
+//$products = get_products(); // Función para obtener los productos desde la base de datos
 ?>
 
 <!DOCTYPE html>

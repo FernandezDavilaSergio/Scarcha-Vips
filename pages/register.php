@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $role = 'client'; // Rol predeterminado, se puede cambiar según las necesidades
 
     // Llamar a la función para registrar al usuario
-    $registration_successful = register_user($email, $password, $role);
+    //$registration_successful = register_user($email, $password, $role);
 
     if ($registration_successful) {
         $message = "Registro exitoso. Puedes iniciar sesión ahora.";

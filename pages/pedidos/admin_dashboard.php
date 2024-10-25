@@ -11,10 +11,10 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
 }
 
 // Obtener estadísticas
-$total_orders = get_total_orders(); // Total de pedidos
-$pending_orders = get_pending_orders(); // Pedidos pendientes
-$completed_orders = get_completed_orders(); // Pedidos completados
-$total_users = get_total_users(); // Total de usuarios registrados
+// $total_orders = get_total_orders(); // Total de pedidos
+// $pending_orders = get_pending_orders(); // Pedidos pendientes
+// $completed_orders = get_completed_orders(); // Pedidos completados
+// $total_users = get_total_users(); // Total de usuarios registrados
 ?>
 
 <!DOCTYPE html>
