@@ -54,7 +54,7 @@ Este sistema ayudará a mejorar la eficiencia en la gestión de pedidos y la sat
 
 ## 📅 Planificación del Proyecto
 
-### Metodología Ágil - XP (Extreme Programming)
+### Metodología Scrum
 
 Este proyecto sigue una metodología ágil con entregas rápidas y pruebas continuas, asegurando que el sistema sea de alta calidad y cumpla con las expectativas de los usuarios.
 
