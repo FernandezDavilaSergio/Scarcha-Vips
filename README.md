@@ -67,9 +67,9 @@ Este proyecto sigue una metodología ágil con entregas rápidas y pruebas conti
 
 ## ⚙️ Herramientas de Desarrollo
 
-- **Lenguajes y Frameworks**: HTML, CSS, JavaScript, Node.js.
+- **Lenguajes y Frameworks**: HTML, CSS, JavaScript, PHP.
 - **Base de Datos**: MySQL para almacenamiento seguro de datos.
-- **Control de Versiones**: GitHub ([Repositorio aquí](https://github.com/tu-usuario/scarcha-vip))
+- **Control de Versiones**: GitHub ([Repositorio aquí](https://github.com/FernandezDavilaSergio/Scarcha-Vips.git))
 - **Gestión de Proyecto**: Kanban y Gantt, asegurando un flujo de trabajo eficiente y organizado.
 
 ---
