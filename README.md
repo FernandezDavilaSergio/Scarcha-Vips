@@ -1,6 +1,6 @@
 # ❄️ Scarcha Vip's - Sistema de Control de Pedidos ❄️
 
-**Scarcha Vip's** es un sistema web diseñado para facilitar el control de pedidos de agua y hielo en línea. Con esta herramienta, los clientes de Scarcha Vip's pueden realizar pedidos, hacer reservas, y efectuar pagos en un entorno fácil y seguro. ¡Bienvenido al futuro de la purificación de agua en La Paz, Bolivia! 🚰
+**Scarcha Vip's** es un sistema web diseñado para facilitar el control de pedidos de agua y hielo en línea. Con esta herramienta, los clientes de Scarcha Vip's pueden realizar pedidos, hacer reservas, y efectuar pagos en un entorno fácil y seguro.🚰
 
 ---
 
