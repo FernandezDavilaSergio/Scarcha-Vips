@@ -13,7 +13,7 @@ Este sistema ayudará a mejorar la eficiencia en la gestión de pedidos y la sat
 ## 🧑‍💻 Equipo de Desarrollo - GPT-eam
 
 - **Coach**: Sergio Fernández-Dávila
-- **Back End Developer**: Gustavo Quisbert
+- **Front End Developer**: Gustavo Quisbert
 - **Front End Developer**: Oscar Ortiz
 - **Analista de Calidad de Software**: Gabriel Choque
 
