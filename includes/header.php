@@ -7,7 +7,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 ">
     <div class="logo" style="display: flex; align-items: center;">
-        <a href="../pages/home.php"><img src="../assets/images/logo.png" alt="Distribuidora de Agua" style="height: 50px; margin-right: 10px;"></a>
+        <a href="../pages/home.php"><img src="../sistemaPedidos/sistema/img/logo.jpg" alt="Distribuidora de Agua" style="height: 50px; margin-right: 10px;"></a>
         <h1 style="color: #ffffff; font-size: 1.5rem;">Distribuidora de Agua</h1>
     </div>
     <nav class="nav-links" id="navLinks" style="display: flex;">

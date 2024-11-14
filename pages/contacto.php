@@ -10,34 +10,45 @@
     <?php include '../includes/header.php'; ?> <!-- Header -->
 
     <!-- Contacto Section -->
-    <section id="contact" class="contacto" style="padding: 60px 0; text-align: center;">
-        <div class="container" style="max-width: 600px; margin: auto;">
-            <h2 style="font-size: 2rem; color: #004080; margin-bottom: 40px;">Contáctenos</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 20px;">
+    <section id="contact" class="contacto">
+        <div class="container contact-container">
+            <h2>Contáctenos</h2>
+            <p class="contact-description">
                 Si tienes alguna pregunta o deseas más información sobre nuestros productos y servicios, no dudes en contactarnos. Estamos aquí para ayudarte.
             </p>
-            <form action="../functions/auth.php" method="POST">
-                <label for="name" style="display: block; margin-bottom: 10px;">Nombre:</label>
-                <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; margin-bottom: 20px;">
+            <form action="../functions/auth.php" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre Completo:</label>
+                    <input type="text" id="name" name="name" required placeholder="Ingresa tu nombre completo">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                </div>
 
-                <label for="email" style="display: block; margin-bottom: 10px;">Correo Electrónico:</label>
-                <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; margin-bottom: 20px;">
+                <div class="form-group">
+                    <label for="phone">Teléfono:</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+591 70000000">
+                </div>
 
-                <label for="subject" style="display: block; margin-bottom: 10px;">Asunto:</label>
-                <input type="text" id="subject" name="subject" required style="width: 100%; padding: 8px; margin-bottom: 20px;">
+                <div class="form-group">
+                    <label for="subject">Asunto:</label>
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>Selecciona un asunto</option>
+                        <option value="consultas_productos">Consultas sobre productos</option>
+                        <option value="servicio_entrega">Servicio de entrega</option>
+                        <option value="sugerencias">Sugerencias</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
 
-                <label for="message" style="display: block; margin-bottom: 10px;">Mensaje:</label>
-                <textarea id="message" name="message" rows="4" required style="width: 100%; padding: 8px; margin-bottom: 20px;"></textarea>
+                <div class="form-group">
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" rows="4" required placeholder="Escribe tu mensaje aquí"></textarea>
+                </div>
 
-                <button type="submit" class="btn" style="
-                    background-color: #004080;
-                    color: #ffffff;
-                    padding: 10px 20px;
-                    font-weight: bold;
-                    border: none;
-                    border-radius: 5px;
-                    cursor: pointer;
-                ">Enviar</button>
+                <button type="submit" class="btn-submit">Enviar</button>
             </form>
         </div>
     </section>
