@@ -161,7 +161,7 @@ CREATE TABLE `configuracion` (
 --
 
 INSERT INTO `configuracion` (`id`, `ci`, `nombre`, `razon_social`, `telefono`, `email`, `direccion`, `iva`) VALUES
-(1, 2580, 'Scarcha Vips', 'Scarcha Vips', 925491523, 'naju@vidainformatico.com', 'LaPaz - Perú', '1.18');
+(1, 2580, 'Scarcha Vips', 'Scarcha Vips', 925491523, 'naju@vidainformatico.com', 'LaPaz - Bolivia', '1.18');
 
 -- --------------------------------------------------------
 
@@ -332,6 +332,19 @@ FOREIGN KEY (distribuidor_id) REFERENCES distribuidor(iddistribuidor);
 INSERT INTO distribuidor (nombre, telefono, direccion, placa_auto) VALUES
 ('Juan Pérez', 72589634, 'Calle Bolivar #123, Zona Central', 'ABC123'),
 ('María López', 71234567, 'Avenida América #456, Zona Sur', 'XYZ789');
+
+--tabla de almacenar consultas
+CREATE TABLE contacto (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    telefono VARCHAR(15) NOT NULL,
+    asunto VARCHAR(50) NOT NULL,
+    mensaje TEXT NOT NULL,
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+--
 
 -- --------------------------------------------------------------
 

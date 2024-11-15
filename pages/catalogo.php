@@ -1,118 +1,53 @@
+<?php
+include_once "../includes/header.php";
+include_once "../sistemaPedidos/conexion.php";
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Productos</title>
-    <link rel="stylesheet" href="../assets/css/styles.css">
-    <style>
-        /* Styles for the card design and layout */
-        .catalogo-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        .card {
-            width: 220px;
-            background: white;
-            padding: 1em;
-            border-radius: 10px;
-            margin: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-image {
-            background-color: rgb(236, 236, 236);
-            width: 100%;
-            height: 150px;
-            border-radius: 10px 10px 0 0;
-        }
-
-        .card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px 10px 0 0;
-        }
-
-        .category {
-            text-transform: uppercase;
-            font-size: 0.7em;
-            font-weight: 600;
-            color: rgb(63, 121, 230);
-            padding: 10px 7px 0;
-        }
-
-        .heading {
-            font-weight: 600;
-            color: rgb(88, 87, 87);
-            padding: 7px;
-        }
-
-        .author {
-            color: gray;
-            font-weight: 400;
-            font-size: 11px;
-            padding-top: 10px;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <?php include '../includes/header.php'; ?>
+<body class="bg-gray-50 text-gray-900">
 
-    <section id="catalogo" class="catalogo">
-        <div class="container">
-            <h2>Catálogo de Productos</h2>
-            <div class="catalogo-grid">
-                <!-- Card for Botellón de Agua 20L -->
-                <div class="catalogo-item card">
-                    <div class="card-image"><img src="assets/images/botellon20L.jpg" alt="Botellón de Agua 20L" class="catalogo-img"></div>
-                    <div class="category">Producto destacado</div>
-                    <div class="heading">Botellón de Agua 20L
-                        <div class="author">Precio: 20 Bs</div>
+<section id="catalogo" class="py-12">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center text-blue-800 mb-10">Catálogo de Productos</h2>
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <?php
+            $query = mysqli_query($conexion, "SELECT * FROM producto");
+            if (mysqli_num_rows($query) > 0) {
+                while ($data = mysqli_fetch_assoc($query)) {
+                    ?>
+                    <div class="bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                        <div class="bg-gray-200 h-56">
+                            <!-- Si tienes imágenes en la base de datos, cámbialo para cargar la imagen correspondiente -->
+                            <img src="../assets/images/default_product.jpg" alt="<?php echo $data['descripcion']; ?>" class="object-cover h-full w-full">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2"><?php echo $data['descripcion']; ?></h3>
+                            <p class="text-sm text-gray-600 mb-4">Precio: <span class="font-medium text-blue-600"><?php echo $data['precio']; ?> Bs</span></p>
+                            <p class="text-sm text-gray-600 mb-4">Stock: <span class="font-medium"><?php echo $data['existencia']; ?> unidades</span></p>
+                            <p class="text-sm text-gray-600 mb-4">Costo de Producción: <span class="font-medium"><?php echo $data['costo_produccion']; ?> Bs</span></p>
+                            <div class="flex justify-end">
+                                <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Ver más</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Card for Botellón de Agua 2L -->
-                <div class="catalogo-item card">
-                    <div class="card-image"><img src="assets/images/botellon2L.jpg" alt="Botellón de Agua 2L" class="catalogo-img"></div>
-                    <div class="category">Producto básico</div>
-                    <div class="heading">Botellón de Agua 2L
-                        <div class="author">Precio: 10 Bs</div>
-                    </div>
-                </div>
-
-                <!-- Card for Paquete de Botellas de Agua 2L -->
-                <div class="catalogo-item card">
-                    <div class="card-image"><img src="assets/images/paqueteBotellas2L.jpg" alt="Paquete de Botellas de Agua 2L" class="catalogo-img"></div>
-                    <div class="category">Paquete económico</div>
-                    <div class="heading">Paquete de Botellas de Agua 2L
-                        <div class="author">Precio: 15 Bs</div>
-                    </div>
-                </div>
-
-                <!-- Card for Hielos 2kg -->
-                <div class="catalogo-item card">
-                    <div class="card-image"><img src="assets/images/hielos2kg.jpg" alt="Hielos 2kg" class="catalogo-img"></div>
-                    <div class="category">Accesorio para fiestas</div>
-                    <div class="heading">Hielos 2kg
-                        <div class="author">Precio: 5 Bs</div>
-                    </div>
-                </div>
-
-                <!-- Card for Hielos 1kg -->
-                <div class="catalogo-item card">
-                    <div class="card-image"><img src="assets/images/hielos1kg.jpg" alt="Hielos 1kg" class="catalogo-img"></div>
-                    <div class="category">Refrigeración rápida</div>
-                    <div class="heading">Hielos 1kg
-                        <div class="author">Precio: 4 Bs</div>
-                    </div>
-                </div>
-            </div>
+                    <?php
+                }
+            } else {
+                echo "<p class='text-center text-gray-600'>No hay productos disponibles.</p>";
+            }
+            ?>
         </div>
-    </section>
+    </div>
+</section>
 
-    <?php include '../includes/footer.php'; ?>
+<?php include_once "../includes/footer.php"; ?>
+
 </body>
 </html>
