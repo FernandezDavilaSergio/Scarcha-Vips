@@ -10,7 +10,7 @@
 <body class="bg-gray-100 text-gray-900">
     <?php include '../includes/header.php'; ?>
 
-    <main class="max-w-5xl mx-auto py-12 px-6">
+    <main class="max-w-7xl mx-auto py-12 px-6">
         <!-- Información de la Empresa -->
         <section class="text-center mb-12">
             <h1 class="text-4xl font-bold text-blue-800 mb-4">Información de Scarcha VIP's</h1>
@@ -18,9 +18,9 @@
         </section>
 
         <!-- Misión, Visión, Valores, Políticas, Ubicación -->
-        <section class="grid gap-8 lg:grid-cols-2">
+        <section class="flex flex-wrap gap-8">
             <!-- Misión y Visión -->
-            <div class="bg-white p-8 shadow-lg rounded-lg space-y-6">
+            <div class="flex-1 bg-white p-8 shadow-lg rounded-lg space-y-6 min-w-[300px]">
                 <h2 class="text-2xl font-semibold text-blue-700">Nuestra Misión y Visión</h2>
                 <div>
                     <h3 class="text-xl font-medium text-gray-800">Misión</h3>
@@ -33,7 +33,7 @@
             </div>
 
             <!-- Valores -->
-            <div class="bg-white p-8 shadow-lg rounded-lg">
+            <div class="flex-1 bg-white p-8 shadow-lg rounded-lg min-w-[300px]">
                 <h2 class="text-2xl font-semibold text-blue-700 mb-4">Nuestros Valores</h2>
                 <ul class="list-inside list-disc text-gray-700 space-y-2">
                     <li><strong>Calidad:</strong> Nos enfocamos en ofrecer productos y servicios que superen las expectativas de nuestros clientes.</li>
@@ -43,9 +43,11 @@
                     <li><strong>Compromiso:</strong> Nos esforzamos por brindar un servicio excepcional en cada experiencia.</li>
                 </ul>
             </div>
+        </section>
 
+        <section class="flex flex-wrap gap-8 mt-8">
             <!-- Políticas -->
-            <div class="bg-white p-8 shadow-lg rounded-lg">
+            <div class="flex-1 bg-white p-8 shadow-lg rounded-lg min-w-[300px]">
                 <h2 class="text-2xl font-semibold text-blue-700 mb-4">Nuestras Políticas</h2>
                 <div class="space-y-4 text-gray-700">
                     <div>
@@ -64,7 +66,7 @@
             </div>
 
             <!-- Ubicación -->
-            <div class="bg-white p-8 shadow-lg rounded-lg">
+            <div class="flex-1 bg-white p-8 shadow-lg rounded-lg min-w-[300px]">
                 <h2 class="text-2xl font-semibold text-blue-700 mb-4">Encuéntranos</h2>
                 <p class="text-gray-700">Nos ubicamos en una zona estratégica para ofrecerte una rápida distribución y entrega a domicilio. Visítanos o contáctanos para cualquier consulta.</p>
                 <iframe class="w-full h-64 mt-4 rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3938.979685888671!2d-78.5772836857909!3d-16.500640488948313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x911cd1b999999999%3A0x1234567890abcdef!2sScarcha%20VIP's%20Distribuidora%20de%20Agua!5e0!3m2!1ses!2sbo!4v1617772328123!5m2!1ses!2sbo" frameborder="0" allowfullscreen="" loading="lazy"></iframe>
@@ -74,7 +76,7 @@
         <!-- Preguntas Frecuentes -->
         <section class="mt-12">
             <h2 class="text-3xl font-semibold text-blue-700 text-center mb-6">Preguntas Frecuentes</h2>
-            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 <div class="bg-white p-6 shadow-lg rounded-lg">
                     <h3 class="font-semibold text-gray-800">¿Qué productos ofrece Scarcha VIP's?</h3>
                     <p class="text-gray-700">Ofrecemos agua purificada y mineral en diferentes presentaciones, incluyendo botellas y garrafones, adecuados para el consumo diario y necesidades empresariales.</p>

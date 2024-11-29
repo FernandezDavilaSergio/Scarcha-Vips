@@ -110,6 +110,12 @@ if (!empty($_SESSION['active'])) {
 
   <!-- Custom scripts for all pages-->
   <script src="sistema/js/sb-admin-2.min.js"></script>
+  
+
+  <button onclick="window.location.href='../index.php';" class="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">
+    Redirigir
+  </button>
+
 
 </body>
 
