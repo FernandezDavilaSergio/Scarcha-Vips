@@ -137,7 +137,7 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`idcliente`, `ci`, `nombre`, `telefono`, `direccion`, `usuario_id`) VALUES
-(1, 123545, 'Pubico en general', 925491523, 'Calle Sagarnaga 145, Zona Rosario, La Paz, Bolivia', 1);
+(1, 123545, 'Pubico en general', 925491523, 'Lima', 1);
 
 -- --------------------------------------------------------
 
@@ -161,7 +161,7 @@ CREATE TABLE `configuracion` (
 --
 
 INSERT INTO `configuracion` (`id`, `ci`, `nombre`, `razon_social`, `telefono`, `email`, `direccion`, `iva`) VALUES
-(1, 2580, 'Scarcha Vips', 'Scarcha Vips', 925491523, 'naju@vidainformatico.com', 'LaPaz - Bolivia', '1.18');
+(1, 1234, 'Administrador Prb', 'Admin ', 925491523, 'ejdeERj@gmail.com', 'La Paz Bolivia', '14.9');
 
 -- --------------------------------------------------------
 
@@ -226,29 +226,25 @@ CREATE TABLE `factura` (
 --
 -- Estructura de tabla para la tabla `producto`
 --
+
 CREATE TABLE `producto` (
   `codproducto` int(11) NOT NULL,
   `descripcion` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
   `proveedor` int(11) NOT NULL,
   `precio` decimal(10,2) NOT NULL,
   `existencia` int(11) NOT NULL,
-  `costo_produccion` decimal(10,2) NOT NULL,
-  `usuario_id` int(11) NOT NULL,
-  PRIMARY KEY (`codproducto`)
+  `usuario_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
 
 --
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`codproducto`, `descripcion`, `proveedor`, `precio`, `existencia`, `costo_produccion`, `usuario_id`) VALUES
-(1, 'Botellón de agua 20L', 1, '20.00', 100, 30.00, 2),
-(2, 'Botella de a 500ml', 1, '5.00', 200, 2.50, 1),
-(6, 'Botella de agua 2L', 1, '8.00', 150, 4.00, 1),
-(7, 'Hielo 1 kg', 2, '10.00', 80, 10.00, 2);
-
-
+INSERT INTO `producto` (`codproducto`, `descripcion`, `proveedor`, `precio`, `existencia`, `usuario_id`) VALUES
+(1, 'Botellón de agua 20L', 1, '20.00', 100, 2),
+(2, 'Botella de a 500ml', 1, '5.00', 200, 1),
+(6, 'Botella de agua 2L', 1, '8.00', 150, 1),
+(7, 'Hielo 1 kg', 2, '10.00', 80, 2);
 -- --------------------------------------------------------
 
 --
@@ -269,8 +265,8 @@ CREATE TABLE `proveedor` (
 --
 
 INSERT INTO `proveedor` (`codproveedor`, `proveedor`, `contacto`, `telefono`, `direccion`, `usuario_id`) VALUES
-(1, 'Bolsas', '789663258', 9645132, 'Calle Murillo 123, Zona Central, La Paz, Bolivia', 2),
-(3, 'Botellas', '78900480', 9865412, 'Calle Sagarnaga 456, Zona Rosario, La Paz, Bolivia', 2);
+(1, 'Open Services', '965432143', 9645132, 'La Paz', 2),
+(3, 'Lineo', '25804', 9865412, 'La Paz', 2);
 
 -- --------------------------------------------------------
 
@@ -310,52 +306,12 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
---  -------------------------------------------------------
--- Create distribuidor table
-CREATE TABLE distribuidor (
-  iddistribuidor INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(100) COLLATE utf8_spanish_ci NOT NULL,
-  telefono INT(11) NOT NULL,
-  direccion VARCHAR(200) COLLATE utf8_spanish_ci NOT NULL,
-  placa_auto VARCHAR(20) COLLATE utf8_spanish_ci NOT NULL
-);
-
--- Add distribuidor_id column to detallefactura table
-ALTER TABLE detallefactura
-ADD distribuidor_id INT NOT NULL AFTER correlativo;
-
--- Add foreign key constraint to detallefactura table
-ALTER TABLE detallefactura
-ADD CONSTRAINT fk_detallefactura_distribuidor
-FOREIGN KEY (distribuidor_id) REFERENCES distribuidor(iddistribuidor);
-
-INSERT INTO distribuidor (nombre, telefono, direccion, placa_auto) VALUES
-('Juan Pérez', 72589634, 'Calle Bolivar #123, Zona Central', 'ABC123'),
-('María López', 71234567, 'Avenida América #456, Zona Sur', 'XYZ789');
-
---tabla de almacenar consultas
-CREATE TABLE contacto (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    telefono VARCHAR(15) NOT NULL,
-    asunto VARCHAR(50) NOT NULL,
-    mensaje TEXT NOT NULL,
-    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
---
-
--- --------------------------------------------------------------
-
 INSERT INTO `usuario` (`idusuario`, `nombre`, `correo`, `usuario`, `clave`, `rol`) VALUES
-(1, 'Scarcha Vips', 'vida@gmail.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1),
-(6, 'Maria Perez Miranda', 'maria@gmail.com', 'maria', '263bce650e68ab4e23f28263760b9fa5', 3);
+(1, 'GPT-Eam Inc', 'vida@gmail.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1)xa;
 
 --
 -- Índices para tablas volcadas
 --
-
 
 --
 -- Indices de la tabla `cliente`
@@ -393,6 +349,11 @@ ALTER TABLE `entradas`
 ALTER TABLE `factura`
   ADD PRIMARY KEY (`nofactura`);
 
+--
+-- Indices de la tabla `producto`
+--
+ALTER TABLE `producto`
+  ADD PRIMARY KEY (`codproducto`);
 
 --
 -- Indices de la tabla `proveedor`
@@ -411,7 +372,6 @@ ALTER TABLE `rol`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`idusuario`);
-
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -476,19 +436,7 @@ ALTER TABLE `rol`
 --
 ALTER TABLE `usuario`
   MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
-
-
--- Establecer AUTO_INCREMENT para la columna iddistribuidor
-ALTER TABLE `distribuidor`
-  MODIFY `iddistribuidor` INT NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 COMMIT;
-
-ALTER TABLE usuario
-ADD COLUMN auth0_id VARCHAR(255) DEFAULT NULL,
-ADD COLUMN tipo_login ENUM('local', 'auth0') DEFAULT 'local';
-
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

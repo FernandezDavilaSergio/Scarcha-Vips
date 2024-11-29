@@ -6,7 +6,7 @@
 		<div class="sidebar-brand-icon rotate-n-15">
 			<img src="img/logo.jpg" class="img-thumbnail">
 		</div>
-		<div class="sidebar-brand-text mx-3">Scarcha Vips</div>
+		<div class="sidebar-brand-text mx-3">Vida Informático</div>
 	</a>
 
 	<!-- Divider -->

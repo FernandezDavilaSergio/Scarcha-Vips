@@ -1,8 +1,8 @@
 <?php
 include_once "includes/header.php";
 include "../conexion.php";
-
 // Validar producto
+
 if (empty($_REQUEST['id'])) {
     header("Location: lista_productos.php");
 } else {
@@ -10,7 +10,7 @@ if (empty($_REQUEST['id'])) {
     if (!is_numeric($id_producto)) {
         header("Location: lista_productos.php");
     }
-    $query_producto = mysqli_query($conexion, "SELECT codproducto, descripcion, proveedor, precio, existencia, costo_produccion FROM producto WHERE codproducto = $id_producto");
+    $query_producto = mysqli_query($conexion, "SELECT codproducto, descripcion, proveedor, precio, existencia FROM producto WHERE codproducto = $id_producto");
     $result_producto = mysqli_num_rows($query_producto);
 
     if ($result_producto > 0) {
@@ -19,31 +19,30 @@ if (empty($_REQUEST['id'])) {
         header("Location: lista_productos.php");
     }
 }
-
 // Agregar Productos a entrada
 if (!empty($_POST)) {
     $alert = "";
-    if (!empty($_POST['cantidad']) && !empty($_POST['precio'])) {
+    if (!empty($_POST['cantidad']) || !empty($_POST['precio']) || !empty($_POST['producto_id'])) {
         $precio = $_POST['precio'];
         $cantidad = $_POST['cantidad'];
         $producto_id = $_GET['id'];
         $usuario_id = $_SESSION['idUser'];
-        $query_insert = mysqli_query($conexion, "INSERT INTO entradas(codproducto, cantidad, precio, usuario_id) VALUES ($producto_id, $cantidad, $precio, $usuario_id)");
+        $query_insert = mysqli_query($conexion, "INSERT INTO entradas(codproducto,cantidad,precio,usuario_id) VALUES ($producto_id, $cantidad, $precio, $usuario_id)");
         if ($query_insert) {
-            // Ejecutar procedimiento almacenado
-            $query_upd = mysqli_query($conexion, "CALL actualizar_precio_producto($cantidad, $precio, $producto_id)");
+            // ejecutar procedimiento almacenado
+            $query_upd = mysqli_query($conexion, "CALL actualizar_precio_producto($cantidad,$precio,$producto_id)");
             $result_pro = mysqli_num_rows($query_upd);
             if ($result_pro > 0) {
                 $alert = '<div class="alert alert-primary" role="alert">
-                        Producto actualizado con éxito
+                        Producto actualizado con exito
                     </div>';
             }
         } else {
-            echo "Error";
+            echo "error";
         }
         mysqli_close($conexion);
     } else {
-        echo "Error";
+        echo "error";
     }
 }
 ?>
@@ -60,16 +59,12 @@ if (!empty($_POST)) {
                     <input type="number" class="form-control" value="<?php echo $data_producto['precio']; ?>" disabled>
                 </div>
                 <div class="form-group">
-                    <label for="costo_produccion">Costo de Producción</label>
-                    <input type="number" class="form-control" value="<?php echo $data_producto['costo_produccion']; ?>" disabled>
-                </div>
-                <div class="form-group">
                     <label for="precio">Cantidad de productos Disponibles</label>
                     <input type="number" class="form-control" value="<?php echo $data_producto['existencia']; ?>" disabled>
                 </div>
                 <div class="form-group">
                     <label for="precio">Nuevo Precio</label>
-                    <input type="number" placeholder="Ingrese nuevo precio" name="precio" class="form-control" value="<?php echo $data_producto['precio']; ?>">
+                    <input type="number" placeholder="Ingrese nombre del precio" name="precio" class="form-control" value="<?php echo $data_producto['precio']; ?>">
                 </div>
                 <div class="form-group">
                     <label for="cantidad">Agregar Cantidad</label>

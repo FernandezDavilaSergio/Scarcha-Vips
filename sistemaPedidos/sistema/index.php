@@ -145,7 +145,7 @@
 					<div class="card-body">
 						<form action="empresa.php" method="post" id="frmEmpresa" class="p-3">
 							<div class="form-group">
-								<label>Ruc:</label>
+								<label>Ruc-NIT:</label>
 								<input type="number" name="txtci" value="<?php echo $ci; ?>" id="txtci" placeholder="ci de la Empresa" required class="form-control">
 							</div>
 							<div class="form-group">
@@ -190,7 +190,7 @@
 					<div class="card-body">
 						<div class="p-3">
 							<div class="form-group">
-								<strong>Ruc:</strong>
+								<strong>Ruc-Nit:</strong>
 								<h6><?php echo $ci; ?></h6>
 							</div>
 							<div class="form-group">
@@ -214,7 +214,7 @@
 								<h6><?php echo $dirEmpresa; ?></h6>
 							</div>
 							<div class="form-group">
-								<strong>iva (%):</strong>
+								<strong>IVA (%):</strong>
 								<h6><?php echo $iva; ?></h6>
 							</div>
 

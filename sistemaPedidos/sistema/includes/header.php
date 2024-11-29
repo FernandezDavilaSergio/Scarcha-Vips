@@ -80,9 +80,7 @@ if ($result_data > 0) {
 					</button>
 					<div class="input-group">
 						<h6>Sistema de Venta</h6>
-						<p class="ml-auto"><strong>Bolivia, </strong><?php echo fechaPais(); ?></p>
-						<h6 href="dss_scarcha.php" class="btn btn-primary">Resumen Actividades</h6>
-						
+						<p class="ml-auto"><strong>Bolivia, </strong><?php echo fechaPeru(); ?></p>
 					</div>
 
 					<!-- Topbar Navbar -->

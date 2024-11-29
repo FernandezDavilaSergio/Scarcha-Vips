@@ -3,17 +3,16 @@ include_once "includes/header.php";
 include "../conexion.php";
 if (!empty($_POST)) {
   $alert = "";
-  if (empty($_POST['producto']) || empty($_POST['precio']) || empty($_POST['costo_produccion'])) {
+  if (empty($_POST['producto']) || empty($_POST['precio'])) {
     $alert = '<div class="alert alert-primary" role="alert">
-              Todos los campos son requeridos
+              Todo los campos son requeridos
             </div>';
   } else {
     $codproducto = $_GET['id'];
     $proveedor = $_POST['proveedor'];
     $producto = $_POST['producto'];
     $precio = $_POST['precio'];
-    $costo_produccion = $_POST['costo_produccion']; // Nuevo campo agregado
-    $query_update = mysqli_query($conexion, "UPDATE producto SET descripcion = '$producto', proveedor= $proveedor, precio= $precio, costo_produccion = $costo_produccion WHERE codproducto = $codproducto");
+    $query_update = mysqli_query($conexion, "UPDATE producto SET descripcion = '$producto', proveedor= $proveedor,precio= $precio WHERE codproducto = $codproducto");
     if ($query_update) {
       $alert = '<div class="alert alert-primary" role="alert">
               Modificado
@@ -35,7 +34,7 @@ if (empty($_REQUEST['id'])) {
   if (!is_numeric($id_producto)) {
     header("Location: lista_productos.php");
   }
-  $query_producto = mysqli_query($conexion, "SELECT p.codproducto, p.descripcion, p.precio, p.costo_produccion, pr.codproveedor, pr.proveedor FROM producto p INNER JOIN proveedor pr ON p.proveedor = pr.codproveedor WHERE p.codproducto = $id_producto");
+  $query_producto = mysqli_query($conexion, "SELECT p.codproducto, p.descripcion, p.precio, pr.codproveedor, pr.proveedor FROM producto p INNER JOIN proveedor pr ON p.proveedor = pr.codproveedor WHERE p.codproducto = $id_producto");
   $result_producto = mysqli_num_rows($query_producto);
 
   if ($result_producto > 0) {
@@ -69,6 +68,7 @@ if (empty($_REQUEST['id'])) {
                 <?php
                 if ($resultado_proveedor > 0) {
                   while ($proveedor = mysqli_fetch_array($query_proveedor)) {
+                    // code...
                 ?>
                     <option value="<?php echo $proveedor['codproveedor']; ?>"><?php echo $proveedor['proveedor']; ?></option>
                 <?php
@@ -87,12 +87,6 @@ if (empty($_REQUEST['id'])) {
               <input type="text" placeholder="Ingrese precio" class="form-control" name="precio" id="precio" value="<?php echo $data_producto['precio']; ?>">
 
             </div>
-            <!-- Nuevo campo agregado -->
-            <div class="form-group">
-              <label for="costo_produccion">Costo de Producción</label>
-              <input type="text" placeholder="Ingrese costo de producción" class="form-control" name="costo_produccion" id="costo_produccion" value="<?php echo $data_producto['costo_produccion']; ?>">
-            </div>
-            <!-- Fin del nuevo campo -->
             <input type="submit" value="Actualizar Producto" class="btn btn-primary">
           </form>
         </div>

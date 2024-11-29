@@ -18,7 +18,7 @@ if (!empty($_POST)) {
 
         if ($result > 0) {
             $alert = '<div class="alert alert-danger" role="alert">
-                        El Ruc ya esta registrado
+                        El Ruc-NIT ya esta registrado
                     </div>';
         }else{
         

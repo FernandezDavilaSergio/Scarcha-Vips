@@ -1,9 +1,5 @@
-<?php 
-//se incluye al base de daos
-include_once "includes/header.php";
+<?php include_once "includes/header.php";
 include "../conexion.php";
-
-//Se comprueba si esta vacio el elemeton de post
 if (!empty($_POST)) {
     $alert = "";
     if (empty($_POST['nombre']) || empty($_POST['telefono']) || empty($_POST['direccion'])) {

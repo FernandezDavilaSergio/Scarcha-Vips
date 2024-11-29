@@ -556,7 +556,7 @@ function sendDataProduct() {
   });
 
 }
-// funcion para eLaPazr producto
+// funcion para elimar producto
 function delProduct() {
   var pr = $('#producto_id').val();
   $('.alertAddProduct').html('');
