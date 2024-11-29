@@ -5,75 +5,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scarcha Vips - Agua y Hielo a Domicilio en La Paz</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-100 font-sans text-gray-800">
-
-    <?php include '../includes/header.php'; ?> <!-- Header -->
-
-    <!-- Hero Section -->
-    <section id="home" class="hero bg-cover bg-center h-96 flex items-center justify-center" style="background-image: url('../assets/img/banerprincipal.jpeg');">
-        <div class="bg-black bg-opacity-50 w-full h-full flex flex-col items-center justify-center text-white text-center p-4">
-            <h1 class="text-5xl font-bold">Scarcha Vips</h1>
-            <p class="text-xl mt-2">Agua y Hielo a Domicilio en La Paz</p>
-        </div>
-    </section>
-
-    <!-- Compromiso Section -->
-    <section id="compromiso" class="compromiso section py-16 bg-white">
-        <div class="container mx-auto text-center max-w-3xl">
-            <h2 class="text-3xl text-blue-800 mb-4">Nuestro Compromiso</h2>
-            <p class="text-lg text-gray-700">En <strong>Scarcha Vips</strong>, trabajamos cada día para llevar a tu puerta agua purificada y hielo de la mejor calidad. Nos dedicamos a satisfacer las necesidades de hidratación de nuestros clientes en La Paz con un servicio rápido, confiable y accesible.</p>
-        </div>
-    </section>
-
-    <!-- Productos Section -->
-    <section id="productos" class="productos section py-16 bg-gray-100">
-        <div class="container mx-auto">
-            <h2 class="text-3xl text-center text-blue-800 mb-10">Nuestros Productos</h2>
-            <div class="flex flex-wrap gap-6 justify-center">
-                <div class="card bg-white p-6 rounded-lg shadow-lg max-w-sm text-center">
-                    <h3 class="text-2xl font-semibold text-blue-800 mb-3">Botellas de Agua</h3>
-                    <p class="text-gray-700 mb-4">Agua purificada en presentaciones de 500 ml y 1 litro, ideal para el consumo diario de toda la familia.</p>
-                    <button class="btn-submit">Ver más</button>
-                </div>
-                <div class="card bg-white p-6 rounded-lg shadow-lg max-w-sm text-center">
-                    <h3 class="text-2xl font-semibold text-blue-800 mb-3">Garrafones</h3>
-                    <p class="text-gray-700 mb-4">Agua purificada en garrafones de 10 y 20 litros, con opción de entrega semanal a domicilio.</p>
-                    <button class="btn-submit">Ver más</button>
-                </div>
-                <div class="card bg-white p-6 rounded-lg shadow-lg max-w-sm text-center">
-                    <h3 class="text-2xl font-semibold text-blue-800 mb-3">Hielo Cristalino</h3>
-                    <p class="text-gray-700 mb-4">Hielo limpio y cristalino, ideal para bebidas y eventos, entregado en bolsas de distintos tamaños.</p>
-                    <button class="btn-submit">Ver más</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Servicios Section -->
-    <section id="servicios" class="servicios section py-16 bg-white">
-        <div class="container mx-auto">
-            <h2 class="text-3xl text-center text-blue-800 mb-10">Servicios Adicionales</h2>
-            <div class="flex flex-wrap gap-6 justify-center">
-                <div class="card bg-white p-6 rounded-lg shadow-lg max-w-sm text-center">
-                    <i class="icon-delivery text-4xl text-blue-800 mb-3"></i>
-                    <p class="text-gray-700">Entrega a domicilio rápida y segura en toda La Paz</p>
-                </div>
-                <div class="card bg-white p-6 rounded-lg shadow-lg max-w-sm text-center">
-                    <i class="icon-purification text-4xl text-blue-800 mb-3"></i>
-                    <p class="text-gray-700">Mantenimiento y asesoría sobre sistemas de purificación de agua</p>
-                </div>
-                <div class="card bg-white p-6 rounded-lg shadow-lg max-w-sm text-center">
-                    <i class="icon-support text-4xl text-blue-800 mb-3"></i>
-                    <p class="text-gray-700">Atención personalizada para adaptarnos a tus necesidades</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../assets/css/styles.css">
     
+    <style>
+        .swiper {
+            width: 100%;
+            height: 500px;
+        }
+        .gradient-overlay {
+            background: linear-gradient(to right, rgba(59, 130, 246, 0.8), rgba(37, 99, 235, 0.8));
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <?php include '../includes/header.php'; ?>
+
+    <!-- Hero Carousel -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide relative">
+                <div class="absolute inset-0 bg-black opacity-50"></div>
+                <img src="../assets/img/banerprincipal.jpeg" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-center text-white text-center">
+                    <div class="max-w-4xl px-4">
+                        <h1 class="text-5xl md:text-6xl font-bold mb-4">Scarcha Vips</h1>
+                        <p class="text-xl md:text-2xl">Agua y Hielo a Domicilio en La Paz</p>
+                        <button class="mt-8 px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-full text-lg transition duration-300">
+                            Ordenar Ahora
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Agregar más slides según necesidad -->
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Características -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex items-center space-x-4 p-6 rounded-lg bg-blue-50">
+                    <i class="fas fa-truck text-3xl text-blue-600"></i>
+                    <div>
+                        <h3 class="font-semibold text-lg">Entrega Rápida</h3>
+                        <p class="text-gray-600">Servicio a domicilio en toda La Paz</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 p-6 rounded-lg bg-blue-50">
+                    <i class="fas fa-water text-3xl text-blue-600"></i>
+                    <div>
+                        <h3 class="font-semibold text-lg">Agua Purificada</h3>
+                        <p class="text-gray-600">Máxima calidad garantizada</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 p-6 rounded-lg bg-blue-50">
+                    <i class="fas fa-headset text-3xl text-blue-600"></i>
+                    <div>
+                        <h3 class="font-semibold text-lg">Atención 24/7</h3>
+                        <p class="text-gray-600">Soporte continuo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Nuestros Productos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="../assets/img/botella.jpg" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Botellas de Agua</h3>
+                        <p class="text-gray-600 mb-4">Agua purificada en presentaciones de 500 ml y 1 litro</p>
+                        <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                            Ver Detalles
+                        </button>
+                    </div>
+                </div>
+                <!-- Repetir para otros productos -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Lo que dicen nuestros clientes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-blue-50 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400">
+                            ★★★★★
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Excelente servicio y calidad. Siempre puntuales con las entregas."</p>
+                    <p class="font-semibold">- María González</p>
+                </div>
+                <!-- Repetir para otros testimonios -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-blue-600">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-white mb-8">¿Listo para ordenar?</h2>
+            <p class="text-xl text-white mb-8">Realiza tu pedido ahora y recíbelo en la puerta de tu casa</p>
+            <button class="bg-white text-blue-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300">
+                Hacer Pedido
+            </button>
+        </div>
+    </section>
 
     <?php include '../includes/footer.php'; ?>
 
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true,
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
 </body>
 </html>

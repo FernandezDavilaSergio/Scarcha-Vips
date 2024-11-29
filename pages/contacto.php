@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Distribuidora de Agua</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body class="bg-gray-100 text-gray-900">
     <?php include '../includes/header.php'; ?> <!-- Header -->

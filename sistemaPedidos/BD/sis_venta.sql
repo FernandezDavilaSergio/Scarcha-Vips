@@ -307,7 +307,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idusuario`, `nombre`, `correo`, `usuario`, `clave`, `rol`) VALUES
-(1, 'GPT-Eam Inc', 'vida@gmail.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1)xa;
+(1, 'GPT-Eam Inc', 'vida@gmail.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1);
 
 --
 -- Índices para tablas volcadas
